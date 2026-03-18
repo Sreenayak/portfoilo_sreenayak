@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreenayak - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-briefcase"></i>
+                <span>Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="stars-2"></div>
+        <div class="stars-3"></div>
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight typing-effect">Sreenayak</span> <span class="edit-caption" title="Click to edit"><i class="fas fa-edit"></i></span>
+                </h1>
+                <p class="hero-subtitle">BTech Student | Web Developer | Tech Enthusiast</p>
+                <p class="hero-description">
+                    Building amazing web projects and continuously learning new technologies
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <div class="code-card">
+                        <div class="code-header">
+                            <div class="circle circle-red"></div>
+                            <div class="circle circle-yellow"></div>
+                            <div class="circle circle-green"></div>
+                        </div>
+                        <div class="code-content">
+                            <p class="typing-code">&lt;h1&gt;Welcome&lt;/h1&gt;</p>
+                            <p class="typing-code delay-1">&lt;p&gt;Let's create magic&lt;/p&gt;</p>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon icon-1"><i class="fab fa-react"></i></div>
+                        <div class="floating-icon icon-2"><i class="fab fa-node-js"></i></div>
+                        <div class="floating-icon icon-3"><i class="fab fa-js-square"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-head"></div>
+            </div>
+        </div>
+        <div class="mouse-scroll">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a BTech student with a passion for web development and creating user-friendly applications. 
+                        I love working with modern technologies like HTML, CSS, JavaScript, React, and Node.js.
+                    </p>
+                    <p>
+                        I believe in continuous learning and building practical projects to strengthen my skills. 
+                        My goal is to contribute valuable solutions and grow as a developer in the tech industry.
+                    </p>
+                    <p class="edit-hint"><i class="fas fa-pencil"></i> Click sections to edit</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projects Built</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Years Learning</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Dedication</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="profile-image-container">
+                        <img src="assets/com%20ima.jpg" alt="Profile photo" class="profile-image-display">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-intro">
+                <p>Here are the technologies and tools I work with to bring ideas to life</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend <span class="skill-level">Intermediate</span></h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-skill="HTML5">
+                            <i class="fab fa-html5"></i> HTML5
+                        </span>
+                        <span class="skill-tag" data-skill="CSS3">
+                            <i class="fab fa-css3-alt"></i> CSS3
+                        </span>
+                        <span class="skill-tag" data-skill="JavaScript">
+                            <i class="fab fa-js-square"></i> JavaScript
+                        </span>
+                        <span class="skill-tag" data-skill="React">
+                            <i class="fab fa-react"></i> React
+                        </span>
+                        <span class="skill-tag" data-skill="Tailwind CSS">
+                            <i class="fas fa-wind"></i> Tailwind CSS
+                        </span>
+                        <span class="skill-tag" data-skill="Bootstrap">
+                            <i class="fab fa-bootstrap"></i> Bootstrap
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend <span class="skill-level">Beginner</span></h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-skill="Node.js">
+                            <i class="fab fa-node-js"></i> Node.js
+                        </span>
+                        <span class="skill-tag" data-skill="Python">
+                            <i class="fab fa-python"></i> Python
+                        </span>
+                        <span class="skill-tag" data-skill="Express.js">
+                            <i class="fas fa-server"></i> Express.js
+                        </span>
+                        <span class="skill-tag" data-skill="MongoDB">
+                            <i class="fas fa-database"></i> MongoDB
+                        </span>
+                        <span class="skill-tag" data-skill="MySQL">
+                            <i class="fas fa-database"></i> MySQL
+                        </span>
+                        <span class="skill-tag" data-skill="REST APIs">
+                            <i class="fas fa-exchange-alt"></i> REST APIs
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Others <span class="skill-level">Intermediate</span></h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-skill="Git">
+                            <i class="fab fa-git-alt"></i> Git
+                        </span>
+                        <span class="skill-tag" data-skill="GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </span>
+                        <span class="skill-tag" data-skill="VS Code">
+                            <i class="fas fa-code"></i> VS Code
+                        </span>
+                        <span class="skill-tag" data-skill="Figma">
+                            <i class="fab fa-figma"></i> Figma
+                        </span>
+                        <span class="skill-tag" data-skill="Postman">
+                            <i class="fas fa-rocket"></i> Postman
+                        </span>
+                        <span class="skill-tag" data-skill="Linux">
+                            <i class="fab fa-linux"></i> Linux
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                    <h3>Tools & Others <span class=\"skill-level\">Intermediate</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">DSA Basics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project-id="1" data-project-title="Todo App with React" data-project-desc="A responsive todo application built with React where users can add, edit, delete, and mark tasks as complete. Features include local storage for data persistence, filter options for completed/pending tasks, and a clean, intuitive user interface." data-project-tech="React,JavaScript,CSS3,LocalStorage">
+                    <div class="project-image">
+                        <div class="image-placeholder-project">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Todo App with React <span class="edit-hint-small"><i class="fas fa-pencil"></i></span></h3>
+                        <p>A responsive app to manage daily tasks with add, edit, delete and completion tracking features.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-project-id="2" data-project-title="Weather App" data-project-desc="A weather application that fetches real-time weather data using OpenWeather API. Users can search for any city and get current weather conditions, temperature, humidity, wind speed, and a 5-day forecast with beautiful weather icons and animations." data-project-tech="JavaScript,HTML5,CSS3,OpenWeather API,Fetch API">
+                    <div class="project-image">
+                        <div class="image-placeholder-project">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App <span class="edit-hint-small"><i class="fas fa-pencil"></i></span></h3>
+                        <p>Real-time weather application with search, current conditions, and 5-day forecast display.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>OpenWeather API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-project-id="3" data-project-title="Portfolio Website" data-project-desc="A modern, fully responsive portfolio website built from scratch using HTML, CSS, and JavaScript. Features include smooth animations, interactive project modals, editable profile sections, and mobile-first responsive design." data-project-tech="HTML5,CSS3,JavaScript,LocalStorage,Responsive Design">
+                    <div class="project-image">
+                        <div class="image-placeholder-project">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="project-link">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website <span class="edit-hint-small"><i class="fas fa-pencil"></i></span></h3>
+                        <p>Modern, responsive portfolio with animations and editable sections.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-image">
+                <img src="" alt="Project Image" class="modal-project-image" style="display: none;">
+                <div class="modal-image-placeholder">
+                    <i class="fas fa-images"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title"></h2>
+                <p class="modal-description"></p>
+                <div class="modal-tech-stack">
+                    <h4>Technologies Used:</h4>
+                    <div class="modal-tech-tags"></div>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm looking for exciting opportunities to learn, grow, and contribute to meaningful projects. Feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:sreenayak711@gmail.com">sreenayak711@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p class="contact-label">Location</p>
+                                <p>Kurnool city,Andhra Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" class="social-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sreenayak. All rights reserved.</p>
+            <p>Designed & Built with <span class="heart">❤</span> by Sreenayak</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
