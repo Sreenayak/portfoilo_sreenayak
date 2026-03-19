@@ -84,8 +84,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe skill cards and project cards
-document.querySelectorAll('.skill-category, .project-card').forEach(el => {
+// Observe skills and projects for fade-in animations
+document.querySelectorAll('.skill-hexagon, .flip-card').forEach(el => {
     observer.observe(el);
 });
 
@@ -193,6 +193,80 @@ skillHexagons.forEach(hexagon => {
             this.style.animation = '';
         }, 10);
     });
+});
+
+// ==================== PROJECT DETAILS MODAL HANDLER ====================
+const projectModal = document.getElementById('projectDetailsModal');
+const modalTitle = document.getElementById('modalProjectTitle');
+const modalType = document.getElementById('modalProjectType');
+const modalDescription = document.getElementById('modalProjectDescription');
+const modalTech = document.getElementById('modalProjectTech');
+const modalBackend = document.getElementById('modalProjectBackend');
+const modalCloseBtn = document.getElementById('projectModalClose');
+const modalCloseBottom = document.getElementById('projectModalCloseBottom');
+
+function openProjectModal(card) {
+    const titleText = card.dataset.title || card.querySelector('.flip-card-back h3')?.textContent || 'Project Details';
+    const descriptionText = card.dataset.description || card.querySelector('.flip-card-back p')?.textContent || 'Detailed description will be added soon.';
+    const techText = card.dataset.tech || '';
+    const backendText = card.dataset.backend || '';
+
+    modalTitle.textContent = titleText;
+    modalType.textContent = card.querySelector('.project-type')?.textContent || '';
+    modalDescription.textContent = descriptionText;
+
+    modalTech.innerHTML = '';
+    if (techText) {
+        techText.split(',').forEach(tag => {
+            const span = document.createElement('span');
+            span.textContent = tag.trim();
+            modalTech.appendChild(span);
+        });
+    }
+
+    modalBackend.innerHTML = '';
+    if (backendText) {
+        const backendLabel = document.createElement('span');
+        backendLabel.textContent = backendText;
+        modalBackend.appendChild(backendLabel);
+    }
+
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+}
+
+function closeProjectModal() {
+    projectModal.classList.remove('active');
+    projectModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+}
+
+// Add click events to view details buttons
+const projectDetailButtons = document.querySelectorAll('.view-details');
+projectDetailButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const card = button.closest('.flip-card');
+        if (card) {
+            openProjectModal(card);
+        }
+    });
+});
+
+// Close modal events
+if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProjectModal);
+if (modalCloseBottom) modalCloseBottom.addEventListener('click', closeProjectModal);
+projectModal?.addEventListener('click', (event) => {
+    if (event.target === projectModal) {
+        closeProjectModal();
+    }
+});
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && projectModal.classList.contains('active')) {
+        closeProjectModal();
+    }
 });
 
 // ==================== FLIP CARD ANIMATIONS ====================

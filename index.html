@@ -64,9 +64,9 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    Hello<span class="highlight typing-effect">SREENAYAK</span> <span class="edit-caption" title="Click to edit"><i class="fas fa-edit"></i></span>
+                    Hi, I'm <span class="highlight typing-effect">Sreenayak</span> <span class="edit-caption" title="Click to edit"><i class="fas fa-edit"></i></span>
                 </h1>
-                <p class="hero-subtitle">AI/ML Enthusiast| Data Analysis | Tech Enthusiast</p>
+                <p class="hero-subtitle">BTech Student | Web Developer | Tech Enthusiast</p>
                 <p class="hero-description">
                     Building amazing web projects and continuously learning new technologies
                 </p>
@@ -211,21 +211,21 @@
                         <div class="hex-content">
                             <i class="fab fa-python"></i>
                             <p>Python</p>
-                            <span class="proficiency">92%</span>
+                            <span class="proficiency">75%</span>
                         </div>
                     </div>
                     <div class="skill-hexagon" data-category="backend">
                         <div class="hex-content">
-                            <i class="fab fa-python"></i>
-                            <p>java</p>
-                            <span class="proficiency">87%</span>
+                            <i class="fab fa-java"></i>
+                            <p>Java</p>
+                            <span class="proficiency">80%</span>
                         </div>
                     </div>
                     <div class="skill-hexagon" data-category="backend">
                         <div class="hex-content">
                             <i class="fas fa-database"></i>
                             <p>MongoDB</p>
-                            <span class="proficiency">75%</span>
+                            <span class="proficiency">65%</span>
                         </div>
                     </div>
 
@@ -273,7 +273,7 @@
             
             <div class="projects-flip-grid">
                 <!-- Project 1 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="Todo App with React" data-description="A responsive task management app with add, edit, delete and completion tracking features." data-tech="React, JavaScript, CSS3" data-backend="Node.js">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -290,13 +290,13 @@
                                 <span>JavaScript</span>
                                 <span>CSS3</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="Weather App" data-description="Real-time weather application with search, current conditions, and 5-day forecast display." data-tech="JavaScript, OpenWeather API, CSS3" data-backend="Node.js">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -313,13 +313,13 @@
                                 <span>OpenWeather API</span>
                                 <span>CSS3</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="E-commerce Platform" data-description="Full-stack e-commerce solution with product listing, cart, and payment integration." data-tech="React, Node.js, MongoDB" data-backend="Java (Spring Boot)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -336,13 +336,13 @@
                                 <span>Node.js</span>
                                 <span>MongoDB</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="Analytics Dashboard" data-description="Interactive dashboard with real-time data visualization and analytics reporting." data-tech="React, Chart.js, Tailwind CSS" data-backend="Java (Spring Boot)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -359,13 +359,13 @@
                                 <span>Chart.js</span>
                                 <span>Tailwind CSS</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="Real-time Chat Application" data-description="Live messaging application with instant notifications and user presence detection." data-tech="Socket.io, Node.js, React" data-backend="Java (Spring Boot)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -382,13 +382,13 @@
                                 <span>Node.js</span>
                                 <span>React</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
-                <div class="flip-card">
+                <div class="flip-card" data-title="AI-Powered Chatbot" data-description="Intelligent chatbot using natural language processing for customer support." data-tech="Python, TensorFlow, NLP" data-backend="Java (Spring Boot)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="project-icon">
@@ -405,13 +405,31 @@
                                 <span>TensorFlow</span>
                                 <span>NLP</span>
                             </div>
-                            <a href="#" class="flip-btn">View Project</a>
+                            <button type="button" class="flip-btn view-details">View Details</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Details Modal -->
+    <div class="project-details-modal" id="projectDetailsModal" aria-hidden="true">
+        <div class="project-details-content">
+            <button class="modal-close" id="projectModalClose" aria-label="Close project details">&times;</button>
+            <div class="modal-header">
+                <h3 id="modalProjectTitle"></h3>
+                <p id="modalProjectType"></p>
+            </div>
+            <p id="modalProjectDescription"></p>
+            <div class="modal-tech-stack" id="modalProjectTech"></div>
+            <div class="modal-backend" id="modalProjectBackend"></div>
+            <div class="modal-footer">
+                <button type="button" class="flip-btn" id="projectModalDemo">Live Demo</button>
+                <button type="button" class="flip-btn" id="projectModalCloseBottom">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Testimonials Section with Auto-Rotating Carousel -->
     <section id="testimonials" class="testimonials">
