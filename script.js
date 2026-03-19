@@ -528,4 +528,92 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ==================== BACK TO TOP BUTTON ====================
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ==================== HAMBURGER MENU ANIMATION ====================
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+    });
+}
+
+// ==================== NAVBAR SCROLL EFFECT ====================
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(8, 14, 39, 0.95)';
+        navbar.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'rgba(8, 14, 39, 0.7)';
+        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
+    }
+});
+
+// ==================== SCROLL TO SECTION WITH OFFSET ====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            const offset = 100;
+            const targetPos = targetElement.offsetTop - offset;
+            window.scrollTo({
+                top: targetPos,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ==================== ENHANCED FORM VALIDATION ====================
+if (contactForm) {
+    const formInputs = contactForm.querySelectorAll('input, textarea');
+    
+    formInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.style.boxShadow = '0 0 0 4px rgba(0, 212, 255, 0.2)';
+        });
+        
+        input.addEventListener('blur', () => {
+            input.style.boxShadow = 'none';
+        });
+    });
+}
+
+// ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+            animationObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.timeline-item, .testimonial-card, .section-title').forEach(el => {
+    animationObserver.observe(el);
+});
+
 console.log('%c✨ All interactive features loaded!', 'color: #06b6d4; font-weight: bold;');
+console.log('%cScroll down or use navigation to explore the portfolio', 'color: #00ff88; font-style: italic;');
