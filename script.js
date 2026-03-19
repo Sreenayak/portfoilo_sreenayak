@@ -33,63 +33,6 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const contactForm = document.querySelector('.contact-form');
-const projectModal = document.getElementById('projectModal');
-const modalClose = document.querySelector('.modal-close');
-const projectLinks = document.querySelectorAll('.project-link');
-
-// ==================== PROJECT MODAL FUNCTIONALITY ====================
-projectLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const projectCard = link.closest('.project-card');
-        const projectId = projectCard.getAttribute('data-project-id');
-        const projectTitle = projectCard.getAttribute('data-project-title');
-        const projectDesc = projectCard.getAttribute('data-project-desc');
-        const projectTech = projectCard.getAttribute('data-project-tech').split(',');
-        
-        // Update modal content
-        document.querySelector('.modal-title').textContent = projectTitle;
-        document.querySelector('.modal-description').textContent = projectDesc;
-        
-        // Update tech tags
-        const modalTechTags = document.querySelector('.modal-tech-tags');
-        modalTechTags.innerHTML = '';
-        projectTech.forEach(tech => {
-            const span = document.createElement('span');
-            span.textContent = tech.trim();
-            modalTechTags.appendChild(span);
-        });
-        
-        // Show modal with animation
-        projectModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        // Scroll to top of modal
-        projectModal.scrollTop = 0;
-    });
-});
-
-// Close modal
-modalClose.addEventListener('click', () => {
-    projectModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
-
-// Close modal when clicking outside
-projectModal.addEventListener('click', (e) => {
-    if (e.target === projectModal) {
-        projectModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && projectModal.classList.contains('active')) {
-        projectModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
 
 // ==================== HAMBURGER MENU ====================
 hamburger.addEventListener('click', () => {
@@ -168,7 +111,91 @@ function createStars() {
 
 createStars();
 
-// ==================== CONTACT FORM SUBMISSION ====================
+// ==================== CAROUSEL FUNCTIONALITY ====================
+let currentSlide = 0;
+const slides = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.dot');
+const carouselTrack = document.querySelector('.carousel-track');
+const carouselPrev = document.getElementById('carouselPrev');
+const carouselNext = document.getElementById('carouselNext');
+
+function updateCarousel() {
+    if (carouselTrack && slides.length > 0) {
+        const offset = -currentSlide * 100;
+        carouselTrack.style.transform = `translateX(${offset}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+}
+
+function goToSlide(n) {
+    currentSlide = n;
+    updateCarousel();
+}
+
+// Carousel autoplay
+let autoplayInterval;
+function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 5000);
+}
+
+function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+}
+
+// Event listeners for carousel
+if (carouselNext) {
+    carouselNext.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+    });
+}
+
+if (carouselPrev) {
+    carouselPrev.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+    });
+}
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetAutoplay();
+    });
+});
+
+// Start carousel autoplay
+if (slides.length > 0) {
+    startAutoplay();
+}
+
+// ==================== HEXAGON SKILL HOVER EFFECTS ====================
+const skillHexagons = document.querySelectorAll('.skill-hexagon');
+skillHexagons.forEach(hexagon => {
+    hexagon.addEventListener('mouseenter', function() {
+        this.style.animation = 'none';
+        setTimeout(() => {
+            this.style.animation = '';
+        }, 10);
+    });
+});
+
+// ==================== FLIP CARD ANIMATIONS ====================
 // Initialize EmailJS (you need to sign up at https://www.emailjs.com/)
 // Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS dashboard
 (function() {
