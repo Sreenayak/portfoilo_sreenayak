@@ -269,13 +269,6 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-// ==================== FLIP CARD ANIMATIONS ====================
-// Initialize EmailJS (you need to sign up at https://www.emailjs.com/)
-// Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS dashboard
-(function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-})();
-
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -305,14 +298,14 @@ if (contactForm) {
 
         // Send email using EmailJS
         const templateParams = {
-            to_email: 'your-email@gmail.com', // Replace with your email
+            to_email: 'sreenayak711@gmail.com', // Replace with your email
             from_name: name,
             from_email: email,
             message: message,
             reply_to_email: email
         };
 
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        emailjs.send('service_y88iffy', 'template_cf17j2d', templateParams)
             .then((response) => {
                 console.log('Email sent successfully!', response.status, response.text);
                 showNotification('✨ Message sent successfully! I will get back to you soon.', 'success');
